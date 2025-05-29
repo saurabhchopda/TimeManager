@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  time-manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: time-manager
+    ports:
+      - "${TIME_MANAGER_PORT:-80}:80" # Configurable port with default 80
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - time-manager-network
+      - default # Connect to default network for existing services
+
+networks:
+  time-manager-network:
+    driver: bridge
+  default: # Define default network if not exists
+    external: true # Use existing default network
