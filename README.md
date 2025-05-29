@@ -1,54 +1,150 @@
-# React + TypeScript + Vite
+# Time Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive web application for managing tasks and combating procrastination. Built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎯 Task Management with Priority Levels
+- ⏱️ Pomodoro Timer with Multiple Durations
+- 📱 Mobile-First Responsive Design
+- 🏠 Work Location Tracking (Home/Office)
+- 📊 Daily Task Completion Tracking
+- 🔄 Task Breakdown Suggestions
+- 💾 Local Storage Persistence
+- 🐳 Docker Support
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- Docker
+- Nginx
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+- Docker and Docker Compose (for containerized deployment)
+
+## Getting Started
+
+### Local Development
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   cd time-manager
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Docker Deployment
+
+1. Build and run using Docker Compose:
+
+   ```bash
+   docker-compose up -d
+   ```
+
+2. Access the application at [http://localhost](http://localhost)
+
+### Environment Variables
+
+The following environment variables can be configured:
+
+- `TIME_MANAGER_PORT`: Port for the application (default: 80)
+
+## Project Structure
+
+```
+time-manager/
+├── src/                    # Source files
+│   ├── App.tsx            # Main application component
+│   └── ...
+├── public/                # Static assets
+├── Dockerfile            # Docker configuration
+├── docker-compose.yml    # Docker Compose configuration
+├── nginx.conf           # Nginx configuration
+└── ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Features in Detail
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Task Management
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- Add tasks with estimated completion time
+- Set priority levels (High, Medium, Low)
+- Mark tasks as complete
+- Delete tasks
+- Break down complex tasks
+
+### Pomodoro Timer
+
+- Quick 5-minute start
+- Standard 25-minute Pomodoro
+- 15-minute quick win
+- Visual timer display
+- Break reminders
+
+### Work Location
+
+- Toggle between Home and Office
+- Location-specific task organization
+- Persistent location preference
+
+## Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript type checking
+
+### Docker Commands
+
+```bash
+# Build the image
+docker build -t time-manager .
+
+# Run the container
+docker run -p 80:80 time-manager
+
+# Using Docker Compose
+docker-compose up -d
+docker-compose down
 ```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Icons by [Lucide](https://lucide.dev/)
+- Built with [Vite](https://vitejs.dev/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
