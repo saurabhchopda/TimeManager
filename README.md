@@ -101,6 +101,19 @@ time-manager/
 - Visual timer display
 - Break reminders
 
+### Mindfulness Practices
+
+The Mindfulness Practices section offers a variety of guided exercises to help you reduce stress, improve focus, and enhance well-being. Each practice includes clear instructions, a timer, and a way to track your progress. Practices include:
+
+- **4-7-8 Breathing:** A calming breath pattern to reduce anxiety and promote relaxation.
+- **Body Scan Meditation:** Progressive awareness of physical sensations to release tension.
+- **Mindful Walking:** Transform ordinary walking into a meditative practice.
+- **Loving-Kindness Meditation:** Cultivate compassion for yourself and others.
+- **5-4-3-2-1 Grounding:** Use your senses to anchor yourself in the present moment.
+- **Evening Reflection:** End your day with gratitude and gentle reflection.
+
+You can mark practices as completed, use built-in timers, and view instructions and benefits for each exercise.
+
 ### Work Location
 
 - Toggle between Home and Office
